@@ -28,18 +28,18 @@ indent_style = tab
 
 
 
-- [基本规则](https://github.com/dwqs/react-style-guide#基本规则)
-- [命名](https://github.com/dwqs/react-style-guide#命名)
-- [声明](https://github.com/dwqs/react-style-guide#声明)
-- [对齐](https://github.com/dwqs/react-style-guide#对齐)
-- [Refs](https://github.com/dwqs/react-style-guide#refs)
-- [引号](https://github.com/dwqs/react-style-guide#引号)
-- [空格](https://github.com/dwqs/react-style-guide#空格)
-- [属性](https://github.com/dwqs/react-style-guide#属性)
-- [括号](https://github.com/dwqs/react-style-guide#括号)
-- [标签](https://github.com/dwqs/react-style-guide#标签)
-- [方法](https://github.com/dwqs/react-style-guide#方法)
-- [顺序](https://github.com/dwqs/react-style-guide#顺序)
+- [基本规则](https://github.com/johanazhu/react-style-guide#基本规则)
+- [命名](https://github.com/johanazhu/react-style-guide#命名)
+- [声明](https://github.com/johanazhu/react-style-guide#声明)
+- [对齐](https://github.com/johanazhu/react-style-guide#对齐)
+- [Refs](https://github.com/johanazhu/react-style-guide#refs)
+- [引号](https://github.com/johanazhu/react-style-guide#引号)
+- [空格](https://github.com/johanazhu/react-style-guide#空格)
+- [属性](https://github.com/johanazhu/react-style-guide#属性)
+- [括号](https://github.com/johanazhu/react-style-guide#括号)
+- [标签](https://github.com/johanazhu/react-style-guide#标签)
+- [方法](https://github.com/johanazhu/react-style-guide#方法)
+- [顺序](https://github.com/johanazhu/react-style-guide#顺序)
 
 ## 基本规则
 
@@ -214,6 +214,7 @@ export default ReservationCard;
     >
     <Spazz />
 </Foo>
+
 ```
 
 ## 引号
@@ -234,6 +235,7 @@ export default ReservationCard;
 
 // good
 <Foo style={{ left: '20px' }} />
+
 ```
 
 ## 空格
@@ -253,6 +255,7 @@ export default ReservationCard;
 
 // good
 <Foo />
+
 ```
 
 - 不要在JSX `{}` 引用括号里两边加空格. eslint: [react/jsx-curly-spacing](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-curly-spacing.md)
@@ -263,6 +266,7 @@ export default ReservationCard;
 
 // good
 <Foo bar={baz} />
+
 ```
 
 ## 属性
@@ -281,6 +285,7 @@ export default ReservationCard;
   userName="hello"
   phoneNumber={12345678}
 />
+
 ```
 
 - 属性值为 `true`，可以忽略赋值。eslint: [react/jsx-boolean-value](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-boolean-value.md)
@@ -298,6 +303,7 @@ export default ReservationCard;
 
 // good
 <Foo hidden />
+
 ```
 
 - `img` 标签要添加 `alt` 属性或者 `role="presentation"`。 eslint: [jsx-a11y/alt-text](https://github.com/evcohen/eslint-plugin-jsx-a11y/blob/master/docs/rules/alt-text.md)
@@ -314,6 +320,7 @@ export default ReservationCard;
 
 // good
 <img src="hello.jpg" role="presentation" />
+
 ```
 
 - 不要在 `img` 标签的 `alt` 属性中使用 "image", "photo", 或 "picture" 一类的单词。eslint：[jsx-a11y/img-redundant-alt](https://github.com/evcohen/eslint-plugin-jsx-a11y/blob/master/docs/rules/img-redundant-alt.md)
@@ -326,6 +333,7 @@ export default ReservationCard;
 
 // good
 <img src="hello.jpg" alt="Me waving hello" />
+
 ```
 
 - 只是用正确且具体的 [ARIA 属性](https://www.w3.org/TR/wai-aria/roles#role_definitions)。eslint：[jsx-a11y/aria-role](https://github.com/evcohen/eslint-plugin-jsx-a11y/blob/master/docs/rules/aria-role.md)
@@ -339,6 +347,7 @@ export default ReservationCard;
 
 // good
 <div role="button" />
+
 ```
 
 - 不要在元素上使用 `accessKey` 属性。eslint：[jsx-a11y/no-access-key](https://github.com/evcohen/eslint-plugin-jsx-a11y/blob/master/docs/rules/no-access-key.md)
@@ -351,6 +360,7 @@ export default ReservationCard;
 
 // good
 <div />
+
 ```
 
 - 避免使用数组的 `index` 来作为属性 `key` 的值，推荐使用唯一ID([为什么?](https://medium.com/@robinpokorny/index-as-a-key-is-an-anti-pattern-e0349aece318))
@@ -371,6 +381,7 @@ export default ReservationCard;
     key={todo.id}
   />
 ))}
+
 ```
 
 - 对于组件所有的非必要属性需在 `defaultProps` 中定义。
@@ -401,6 +412,7 @@ SFC.defaultProps = {
   bar: '',
   children: null,
 };
+
 ```
 
 - 尽量少用扩展运算符
@@ -424,6 +436,7 @@ function HOC(WrappedComponent) {
     }
   }
 }
+
 ```
 
 - 很清楚扩展运算符是用于对象时。在使用 Mocha 测试组件的时扩展运算符就非常有用
@@ -437,6 +450,7 @@ export default function Foo {
 
   return (<div {...props} />);
 }    
+
 ```
 
 注意：使用时要尽可能过滤不必要的属性。使用 [prop-types-exact](https://www.npmjs.com/package/prop-types-exact)能预防 bug。
@@ -453,6 +467,7 @@ render() {
   const { irrelevantProp, ...relevantProps  } = this.props;
   return <WrappedComponent {...this.props} />
 } 
+
 ```
 
 ## Refs
@@ -469,6 +484,7 @@ render() {
 <Foo
   ref={(ref) => { this.myRef = ref; }}
 />
+
 ```
 
 ## 括号
@@ -497,6 +513,7 @@ render() {
     const body = <div>hello</div>;
     return <MyComponent>{body}</MyComponent>;
 }
+
 ```
 
 ## 标签
@@ -509,6 +526,7 @@ render() {
 
 // good
 <Foo className="stuff" />
+
 ```
 
 - 如果组件有多行属性，闭合标签应写在新的一行上。eslint: [react/jsx-closing-bracket-location](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-closing-bracket-location.md)
@@ -524,6 +542,7 @@ render() {
     bar="bar"
     baz="baz"
 />
+
 ```
 
 ## 方法
@@ -543,6 +562,7 @@ function ItemList(props) {
     </ul>
   );
 }
+
 ```
 
 - 在构造函数中绑定需要在 `render` 方法使用的事件处理函数(绑定 `this`)。eslint：[react/jsx-no-bind](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-no-bind.md)
@@ -601,6 +621,7 @@ const GoodDemo = () => {
     
     return <div onClick={onClickDiv} />	
 }
+
 ```
 
 - 不要对 React 组件的内置方法使用 `underscore` 前缀
@@ -634,6 +655,7 @@ const GoodDemo = () => {
     
     // other stuff
 }
+
 ```
 
 - 确保 `render` 方法中有返回值。eslint: [react/require-render-return](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/require-render-return.md)
@@ -648,6 +670,7 @@ render() {
 render() {
   return (<div />);
 }
+
 ```
 
 ## 顺序
@@ -763,6 +786,7 @@ const Key = forwardRef((props: KeyProps, ref: any) => {
 })
 
 export default React.memo(Key);
+
 ```
 
 
@@ -814,6 +838,7 @@ Link.propTypes = propTypes;
 Link.defaultProps = defaultProps;
 
 export default Link;
+
 ```
 
 
